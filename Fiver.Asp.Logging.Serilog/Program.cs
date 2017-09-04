@@ -42,10 +42,9 @@ namespace Fiver.Asp.Logging.Serilog
                                 .WriteTo.Seq("http://localhost:5341")
                                 .CreateLogger()
                                 .ForContext<HelloLoggingMiddleware>();
-
-                    builder.AddSerilog();
                 })
                 .UseStartup<Startup>()
+                .UseSerilog()
                 .Build();
     }
 }
